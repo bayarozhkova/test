@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тестовое задание 2</title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<table style="width:100%">
+	  <tr>
+	    <th>Firstname</th>
+	    <th>Lastname</th> 
+	    <th>Age</th>
+	  </tr>
+
+	  <tr>
+	    <td>Jill</td>
+	    <td>Smith</td> 
+	    <td>50</td>
+	  </tr>
+
+	  <tr>
+	    <td>Eve</td>
+	    <td>Jackson</td> 
+	    <td>94</td>
+	  </tr>
+	
+	<style type="text/css">
+		.old {
+			color: red;
+			font-weight: 700;
+		}
+
+		.young {
+			color: green;
+			font-weight: 700;
+		}
+	</style>
+	
+	</table>
+
+	<script type="text/javascript">
+		
+	$(document).ready(function() {	
+		$('tr:not(:first-child)').each(function(){
+			var age = $(this).find('td:nth-child(3)').text();
+			if (age <= 50) {
+				$(this).addClass("young");
+			}
+			else if (age > 50) {
+				$(this).addClass("old");
+			}
+
+			else {
+
+			}
+		}); 
+	}); 
+
+	</script>
+
+</body>
+</html>
